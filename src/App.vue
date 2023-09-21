@@ -1,9 +1,15 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+// setup是vue3语法糖，vue3兼容vue2
+// import HelloWorld from './components/HelloWorld.vue'
+import Home from './views/Home.vue'
+import About from './views/About.vue'
 </script>
 
 <template>
-  <div>
+  <p>hello vite</p>
+  <Home>首页</Home>
+  <About>关于</About>
+  <!-- <div>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
@@ -11,7 +17,7 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <HelloWorld msg="Vite + Vue" /> -->
 </template>
 
 <style scoped>
