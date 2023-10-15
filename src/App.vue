@@ -3,12 +3,15 @@
 // import HelloWorld from './components/HelloWorld.vue'
 import Home from './views/Home.vue'
 import About from './views/About.vue'
+import Compute from './components/Compute.vue'
 </script>
 
 <template>
+  <Compute></Compute>
+  <About></About>
   <p>hello vite</p>
-  <Home>首页</Home>
-  <About>关于</About>
+  <Home></Home>
+  
   <!-- <div>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
