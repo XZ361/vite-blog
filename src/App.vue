@@ -4,13 +4,15 @@
 import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Compute from './components/Compute.vue'
+import SearchBar from './components/SearchBar.vue'
 </script>
 
 <template>
+  <SearchBar></SearchBar>
   <Compute></Compute>
   <About></About>
   <p>hello vite</p>
-  <Home></Home>
+  <!-- <Home></Home> -->
   
   <!-- <div>
     <a href="https://vitejs.dev" target="_blank">
