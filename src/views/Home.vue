@@ -13,6 +13,11 @@
         <button @click="handleClcik4">click4</button>
         <p>{{ reactiveData.name }} -- {{ reactiveData.age }}</p>
         <button @click="handleClcik5">click5</button>
+        <!------------------------------------------------------>
+        <p>{{ refData6 }}</p>
+        <button @click="handleClcik6">click6</button>
+        <p>{{ reactiveData7 }} </p>
+        <button @click="handleClcik7">click7</button>
     </div>
 </template>
 
@@ -57,6 +62,21 @@ const handleClcik5 = () => {
   reactiveData.name = 'HelloVite!';
   reactiveData.age = 33;
 }
+
+//ref和reactive的区别
+let refData6 = ref('hello');
+const handleClcik6 = () => {
+  console.log(str);
+  refData6.value = 'hello vite!';
+}
+
+let reactiveData7 = reactive('vitehello');
+const handleClcik7 = () => {
+  // console.log(reactiveData7);
+  reactiveData7 = 'HelloVite!';
+}
+
+
 </script>
 
 <style lang="scss" scoped>
