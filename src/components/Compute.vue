@@ -4,7 +4,7 @@
         <ul>
             <li v-for="(item, index) in nums" :key="index">{{ item.name }}</li>
         </ul>
-        <!-----------双向数据绑定-->
+        <!-----------双向数据绑定的元素input,textarea,search-->
         <input type="text" v-model="vut">
         <p>{{ vut }}</p>
     </div>
