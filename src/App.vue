@@ -5,9 +5,17 @@ import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Compute from './components/Compute.vue'
 import SearchBar from './components/SearchBar.vue'
+import Postlist from './components/postList.vue'
+
+let posts = [
+  {title:'hello Vue',id:'001'},
+  {title:'hello React',id:'002'}
+]
 </script>
 
 <template>
+  <Postlist :posts="posts"></Postlist>
+  ------------------------
   <SearchBar></SearchBar>
   <Compute></Compute>
   <About></About>

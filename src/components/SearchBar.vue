@@ -21,9 +21,9 @@ const searchNums = computed(()=>{
 //     console.log('val改变了！',newVal,preVal);
 // });
 // 初始化就会执行
-watchEffect(()=>{
-    console.log('watchEffect执行了',val.value);
-})
+// watchEffect(()=>{
+//     console.log('watchEffect执行了',val.value);
+// })
 </script>
 
 <style lang="scss" scoped>
