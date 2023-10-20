@@ -8,8 +8,8 @@ import SearchBar from './components/SearchBar.vue'
 import Postlist from './components/postList.vue'
 
 let posts = [
-  {title:'hello Vue',id:'001'},
-  {title:'hello React',id:'002'}
+  {title:'hello Vue',body:'hi Vue',id:1},
+  {title:'hello React',body:'hi React Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, temporibus cumque numquam tenetur praesentium aliquam debitis rerum maxime quia sunt, magni laborum molestias eveniet voluptates ipsam iste iusto a. Quam?',id:2}
 ]
 </script>
 
@@ -19,7 +19,6 @@ let posts = [
   <SearchBar></SearchBar>
   <Compute></Compute>
   <About></About>
-  <p>hello vite</p>
   <!-- <Home></Home> -->
   
   <!-- <div>
