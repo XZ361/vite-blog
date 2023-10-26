@@ -6,15 +6,19 @@ import About from './views/About.vue'
 import Compute from './components/Compute.vue'
 import SearchBar from './components/SearchBar.vue'
 import Postlist from './components/postList.vue'
+import { ref } from 'vue'
 
-let posts = [
+let posts = ref([
   {title:'hello Vue',body:'hi Vue',id:1},
   {title:'hello React',body:'hi React Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, temporibus cumque numquam tenetur praesentium aliquam debitis rerum maxime quia sunt, magni laborum molestias eveniet voluptates ipsam iste iusto a. Quam?',id:2}
-]
+]);
+const showBar = ref(true);
 </script>
 
 <template>
-  <Postlist :posts="posts"></Postlist>
+  <Postlist :posts="posts"  v-if= "showBar"></Postlist>
+  <button @click="showBar = !showBar">显示或隐藏</button>
+  <button @click="posts.pop()">删除一条数据</button>
   ------------------------
   <SearchBar></SearchBar>
   <Compute></Compute>
