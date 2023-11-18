@@ -1,6 +1,7 @@
 <script setup>
 // setup是vue3语法糖，vue3兼容vue2
 // import HelloWorld from './components/HelloWorld.vue'
+import axios from 'axios';
 import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Compute from './components/Compute.vue'
@@ -8,21 +9,34 @@ import SearchBar from './components/SearchBar.vue'
 import Postlist from './components/postList.vue'
 import { ref } from 'vue'
 
-let posts = ref([
-  {title:'hello Vue',body:'hi Vue',id:1},
-  {title:'hello React',body:'hi React Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, temporibus cumque numquam tenetur praesentium aliquam debitis rerum maxime quia sunt, magni laborum molestias eveniet voluptates ipsam iste iusto a. Quam?',id:2}
-]);
+let posts = ref([]);
+
 const showBar = ref(true);
+const load = async ()=>{
+  try {
+    let {data} = await axios('http://localhost:3000/posts');
+    posts.value = data;
+    
+  } catch (error) {
+    console.log(error);
+  }
+}
+load();
 </script>
 
 <template>
-  <Postlist :posts="posts"  v-if= "showBar"></Postlist>
-  <button @click="showBar = !showBar">显示或隐藏</button>
+  <div v-if="posts.length">
+    <Postlist :posts="posts"  v-if= "showBar"></Postlist>
+  </div>
+  <div v-else>
+    加载中。。。。。
+  </div>
+  <!-- <button @click="showBar = !showBar">显示或隐藏</button>
   <button @click="posts.pop()">删除一条数据</button>
   ------------------------
   <SearchBar></SearchBar>
   <Compute></Compute>
-  <About></About>
+  <About></About> -->
   <!-- <Home></Home> -->
   
   <!-- <div>
