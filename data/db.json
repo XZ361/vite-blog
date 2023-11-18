@@ -1,0 +1,35 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "json-vue",
+            "author": "typicode",
+            "body": "For stom or legacy environment, you can try importi",
+            "tags":[
+                "abc",
+                "dvg",
+                "hvsj"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "json-react",
+            "author": "typicode",
+            "body": "For stom or legacy environment, you can try importi"
+        },
+        {
+            "id": 3,
+            "title": "json-server",
+            "author": "typicode",
+            "body": "For stom or legacy environment, you can try importiFor stom or legacy environment, you can try importiFor stom or legacy environment, you can try importi"
+
+        },
+        {
+            "id": 4,
+            "title": "json-solid",
+            "author": "typicode",
+            "body": "For stom or legacy environment, you can try importi"
+
+        }
+    ]
+}

@@ -22,9 +22,9 @@ onMounted(()=>{
 onUnmounted(()=>{
     // alert('组件销毁之前执行');
 })
-onUpdated(()=>{
-    alert('当组件内的内容发生变化，就会执行该钩子函数')
-})
+// onUpdated(()=>{
+//     alert('当组件内的内容发生变化，就会执行该钩子函数')
+// })
 </script>
 
 <style lang="scss" scoped>
