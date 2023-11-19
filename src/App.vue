@@ -13,11 +13,13 @@ load();
 </script>
 
 <template>
-  <div v-if="posts.length">
-    <Postlist :posts="posts"  ></Postlist>
-  </div>
-  <div v-else>
-    加载中。。。。。
+  <div class="home">
+    <div v-if="posts.length" class="layout">
+      <Postlist :posts="posts"  ></Postlist>
+    </div>
+    <div v-else>
+      加载中。。。。。
+    </div>
   </div>
   <!-- <button @click="showBar = !showBar">显示或隐藏</button>
   <button @click="posts.pop()">删除一条数据</button>
@@ -39,6 +41,16 @@ load();
 </template>
 
 <style scoped>
+.home{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+.layout{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
