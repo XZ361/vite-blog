@@ -1,32 +1,20 @@
 <script setup>
 // setup是vue3语法糖，vue3兼容vue2
 // import HelloWorld from './components/HelloWorld.vue'
-import axios from 'axios';
 import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Compute from './components/Compute.vue'
 import SearchBar from './components/SearchBar.vue'
 import Postlist from './components/postList.vue'
-import { ref } from 'vue'
+import getPosts from './composibles/getPosts'
 
-let posts = ref([]);
-
-const showBar = ref(true);
-const load = async ()=>{
-  try {
-    let {data} = await axios('http://localhost:3000/posts');
-    posts.value = data;
-    
-  } catch (error) {
-    console.log(error);
-  }
-}
+const {posts,load} = getPosts();
 load();
 </script>
 
 <template>
   <div v-if="posts.length">
-    <Postlist :posts="posts"  v-if= "showBar"></Postlist>
+    <Postlist :posts="posts"  ></Postlist>
   </div>
   <div v-else>
     加载中。。。。。
