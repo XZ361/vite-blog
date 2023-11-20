@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import SinglePost  from "./SinglePost.vue";
+import SinglePost from "./SinglePost.vue";
 import { onMounted,onUnmounted,onUpdated } from "vue";
 
 defineProps({
