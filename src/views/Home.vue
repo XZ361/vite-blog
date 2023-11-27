@@ -22,7 +22,7 @@
             <Postlist :posts="posts"  ></Postlist>
           </div>
           <div v-else>
-            加载中。。。。。
+            <Spinner/>
           </div>
         </div>
     </div>
@@ -31,6 +31,7 @@
 <script setup>
 import getPosts from '../composibles/getPosts'
 import Postlist from "../components/postList.vue";
+import Spinner from "../components/Spinner.vue";
 
 const {posts,load} = getPosts();
 load();
