@@ -4,7 +4,6 @@
 import About from './views/About.vue'
 import NavBar from './components/NavBar.vue'
 import SearchBar from './components/SearchBar.vue'
-import Postlist from './components/postList.vue'
 
 </script>
 
