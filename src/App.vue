@@ -3,7 +3,6 @@
 // import HelloWorld from './components/HelloWorld.vue'
 import About from './views/About.vue'
 import NavBar from './components/NavBar.vue'
-import SearchBar from './components/SearchBar.vue'
 
 </script>
 
