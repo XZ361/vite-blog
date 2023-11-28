@@ -17,7 +17,7 @@ const {post,load} = getPost(props.id);
 load();
 
 const props = defineProps({
-    id: Number
+    id: String
 })
 </script>
 

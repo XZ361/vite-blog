@@ -1,6 +1,6 @@
 <template>
     <div class="create">
-        <form action="">
+        <form @submit.prevent="handleSubmit">
             <label for="title">标题</label>
             <input type="text" v-model="title" required>
             <label for="body">内容</label>
@@ -10,17 +10,20 @@
             <!-- 显示tag-->
             <div v-for="tag in tags" :key="tag" class="pill">#{{ tag }}</div>
         </form>
-        <button @click="onCreate"> 添加</button>
+        <button @click="handleSubmit"> 添加</button>
     </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import axios from "axios";
+import { useRouter } from "vue-router";
 
 const title = ref("");
 const body = ref("");
 const tags = ref([]);
 const tag = ref("");
+const router = useRouter();
 
 const addTag = ()=>{
     if(!tags.value.includes(tag.value)){
@@ -28,6 +31,19 @@ const addTag = ()=>{
         tags.value.push(tag.value);
     }
     tag.value = "";
+}
+const handleSubmit = async ()=>{
+    const post={
+        id: Math.floor(Math.random()*1000),
+        title: title.value,
+        body: body.value,
+        tags: tags.value
+    }
+    let data = await axios.post("http://localhost:3000/posts",post);
+    // 在 HTTP 协议中，201 Created 是一个代表成功的应答状态码，表示请求已经被成功处理，并且创建了新的资源。新的资源在应答返回之前已经被创建。同时新增的资源会在应答消息体中返回，
+    if(data.status == 201){
+        router.push('/');
+    }
 }
 </script>
 
