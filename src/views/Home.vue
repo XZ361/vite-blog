@@ -19,7 +19,8 @@
         <button @click="handleClcik7">click7</button> -->
         <div class="home">
           <div v-if="posts.length" class="layout">
-            <Postlist :posts="posts"  ></Postlist>
+            <Postlist :posts="posts" ></Postlist>
+            <TagCloud :posts="posts" />
           </div>
           <div v-else>
             <Spinner/>
@@ -32,6 +33,7 @@
 import getPosts from '../composibles/getPosts'
 import Postlist from "../components/postList.vue";
 import Spinner from "../components/Spinner.vue";
+import TagCloud from "../components/TagCloud.vue";
 
 const {posts,load} = getPosts();
 load();

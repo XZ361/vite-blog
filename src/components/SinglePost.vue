@@ -32,6 +32,7 @@ const snippet = computed(()=>{
     color: white;
     margin-bottom: 10px;
     max-width: 400px;
+    text-align: left;
 }
 .post h3::before{
     content: "";
